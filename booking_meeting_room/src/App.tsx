@@ -1,10 +1,14 @@
 import React from 'react';
-import { Card } from './frontend/visual/Card';
+import { Login } from './components/Login/Login';
+import { MainLayout } from './components/MainLayout/MainLayout';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <Card />
+    <>
+      <Login />
+      <MainLayout />
+    </>
   );
-}
+};
 
 export default App;
