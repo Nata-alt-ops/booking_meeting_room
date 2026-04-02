@@ -52,6 +52,7 @@ export const MyBookings: React.FC = () => {
         className="btn btn-sm btn-outline-danger"
         onClick={() => setDeleteId(booking.id)} // Вместо confirm просто ставим ID
       >
+        
         ❌ Отмена
       </button>
             </div>
