@@ -14,7 +14,7 @@ import {
 import { Header } from '../Header/Header';
 import { RoomList } from '../RoomList/RoomList';
 import { MyBookings } from '../MyBookings/MyBookings';
-import { BookingModal } from '../BookingModal/BookingModal';
+import {BookingModal } from '../BookingModal/BookingModal';
 import { Notification } from '../Notification/Notification';
 
 

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useUnit } from 'effector-react';
 import { $myBookings, deleteBooking, setEditingBooking, setShowModal } from '../stores/bookingStore';
 
 export const MyBookings: React.FC = () => {
   const myBookings = useUnit($myBookings);
+  const [deleteId, setDeleteId] = useState<number | null>(null); 
 
   if (myBookings.length === 0) {
     return (
@@ -47,16 +48,12 @@ export const MyBookings: React.FC = () => {
               >
                 ✏️ Изменить
               </button>
-              <button
-                className="btn btn-sm btn-outline-danger"
-                onClick={() => {
-                  if (confirm('Отменить эту встречу?')) {
-                    deleteBooking(booking.id);
-                  }
-                }}
-              >
-                ❌ Отмена
-              </button>
+               <button
+        className="btn btn-sm btn-outline-danger"
+        onClick={() => setDeleteId(booking.id)} // Вместо confirm просто ставим ID
+      >
+        ❌ Отмена
+      </button>
             </div>
           </div>
         ))}

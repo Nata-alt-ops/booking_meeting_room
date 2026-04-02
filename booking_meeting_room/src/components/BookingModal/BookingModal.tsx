@@ -1,4 +1,6 @@
-// src/components/BookingModal/BookingModal.tsx
+// ⚠️ ВАЖНО: Файл должен называться BookingModal.tsx (с большой буквы)
+// и лежать в папке: src/components/BookingModal/
+
 import React, { useEffect, useState } from 'react';
 import { useUnit } from 'effector-react';
 import {
@@ -12,8 +14,9 @@ import {
   updateBooking,
   setEditingBooking,
   clearSelection,
-} from './../stores/bookingStore';
+} from '../stores/bookingStore';
 
+// ✅ ЭКСПОРТ ОБЯЗАТЕЛЬНО ДОЛЖЕН БЫТЬ ТАК:
 export const BookingModal: React.FC = () => {
   const showModal = useUnit($showModal);
   const selectedRoom = useUnit($selectedRoom);
@@ -62,9 +65,9 @@ export const BookingModal: React.FC = () => {
   return (
     <div className="modal-overlay" onClick={handleClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-header">
-          <h5>{editingBooking ? '✏️ Редактирование' : '🔒 Бронирование'}</h5>
-          <button className="btn-close" onClick={handleClose}></button>
+        <div className="modal-header d-flex justify-content-between align-items-center">
+          <h5 className="mb-0">{editingBooking ? '✏️ Редактирование' : '🔒 Бронирование'}</h5>
+          <button type="button" className="btn-close" onClick={handleClose}></button>
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -100,7 +103,7 @@ export const BookingModal: React.FC = () => {
             />
           </div>
 
-          <div className="modal-footer">
+          <div className="modal-footer d-flex justify-content-end gap-2">
             <button type="button" className="btn btn-secondary" onClick={handleClose}>
               Отмена
             </button>

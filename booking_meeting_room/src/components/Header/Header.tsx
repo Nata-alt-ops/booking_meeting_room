@@ -2,6 +2,7 @@ import React from 'react';
 import { useUnit } from 'effector-react';
 import { $user, logout } from '../stores/bookingStore';
 
+
 export const Header: React.FC = () => {
   const user = useUnit($user);
 
